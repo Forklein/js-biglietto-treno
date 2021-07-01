@@ -1,6 +1,6 @@
 // Test
 
-console.log('Ciao peppe!')
+console.log('Ciao peppe!');
 
 // Traccia
 
@@ -38,16 +38,19 @@ if(userage < 18){
     console.log('Sei minorenne')
     var discount = totalkmprice * discountjunior;
     var ticketpriceuser = totalkmprice - discount;
-    console.log('Il biglietto costa ' + ticketpriceuser.toFixed(2) + '€')
+    console.log('Il biglietto costa ' + ticketpriceuser.toFixed(2) + '€');
+    console.log('Il tuo sconto è di ' + discount.toFixed(2) + '€');
  // User > 65 anni
 }else if(userage > 65){
     var discount = totalkmprice * discountover;
     var ticketpriceuser = totalkmprice - discount;
     console.log('Sei over 65')
-    console.log('Il biglietto costa ' + ticketpriceuser.toFixed(2) + '€')
+    console.log('Il biglietto costa ' + ticketpriceuser.toFixed(2) + '€');
+    console.log('Il tuo sconto è di ' + discount.toFixed(2) + '€');
  // User not junior and not over
 }else {
     totalkmprice = (ticketprice * userkm)
-    console.log('Non sei nè minorenne e nè over 65')
-    console.log('Il biglietto costa ' + totalkmprice.toFixed(2) + '€')
+    console.log('Non sei nè minorenne e nè over 65');
+    console.log('Il biglietto costa ' + totalkmprice.toFixed(2) + '€');
+    console.log('Non puoi usufruire dello sconto :(');
 }
