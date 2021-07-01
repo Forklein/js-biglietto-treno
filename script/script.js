@@ -16,6 +16,12 @@ L'output del prezzo finale va stampato in forma umana
 Questo richiederà un minimo di ricerca.
 */
 
+// variable from html
+
+var textage = document.getElementById('textage');
+var textticketprice = document.getElementById('textticketprice');
+var textdiscount = document.getElementById('textdiscount');
+
 
 // Take input km and age
 
@@ -39,24 +45,24 @@ if(isNaN(userkm) || isNaN(userage)){
 }else{
     // User < 18 anni
     if(userage < 18){
-        console.log('Sei minorenne')
         var discount = totalkmprice * discountjunior;
         var ticketpriceuser = totalkmprice - discount;
-        console.log('Il biglietto costa ' + ticketpriceuser.toFixed(2) + '€');
-        console.log('Il tuo sconto è di ' + discount.toFixed(2) + '€');
+        textage.innerHTML = 'Ciao hai meno di 18 anni';
+        textticketprice.innerHTML = ('Il biglietto costa ' + ticketpriceuser.toFixed(2) + '€');
+        textdiscount.innerHTML = ('Il tuo sconto è di ' + discount.toFixed(2) + '€');
     // User > 65 anni
     }else if(userage > 65){
         var discount = totalkmprice * discountover;
         var ticketpriceuser = totalkmprice - discount;
-        console.log('Sei over 65');
-        console.log('Il biglietto costa ' + ticketpriceuser.toFixed(2) + '€');
-        console.log('Il tuo sconto è di ' + discount.toFixed(2) + '€');
+        textage.innerHTML = 'Ciao hai più di 65 anni';
+        textticketprice.innerHTML = ('Il biglietto costa ' + ticketpriceuser.toFixed(2) + '€');
+        textdiscount.innerHTML = ('Il tuo sconto è di ' + discount.toFixed(2) + '€');
     // User not junior and not over
     }else {
         totalkmprice = (ticketprice * userkm)
-        console.log('Non sei nè minorenne e nè over 65');
-        console.log('Il biglietto costa ' + totalkmprice.toFixed(2) + '€');
-        console.log('Non puoi usufruire dello sconto :(');
+        textage.innerHTML = 'Ciao hai un età compresa tra 18 e 65 anni';
+        textticketprice.innerHTML = ('Il biglietto costa ' + totalkmprice.toFixed(2) + '€');
+        textdiscount.innerHTML = ('Non puoi usufruire dello sconto :(');
     }
 }
 
