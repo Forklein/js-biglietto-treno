@@ -30,7 +30,7 @@ var discountjunior = 20 / 100;
 var discountover = 40 / 100;
 
 // Ticket Total for km 
-var totalkmprice = (ticketprice * userkm)
+var totalkmprice = (ticketprice * userkm);
 
 
 // User < 18 anni
@@ -44,7 +44,7 @@ if(userage < 18){
 }else if(userage > 65){
     var discount = totalkmprice * discountover;
     var ticketpriceuser = totalkmprice - discount;
-    console.log('Sei over 65')
+    console.log('Sei over 65');
     console.log('Il biglietto costa ' + ticketpriceuser.toFixed(2) + '€');
     console.log('Il tuo sconto è di ' + discount.toFixed(2) + '€');
  // User not junior and not over
